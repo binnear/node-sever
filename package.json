@@ -1,0 +1,23 @@
+{
+  "name": "private-sever",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binnear/node-sever.git"
+  },
+  "author": "binnear",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binnear/node-sever/issues"
+  },
+  "homepage": "https://github.com/binnear/node-sever#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "redis": "^2.8.0"
+  }
+}
