@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover ./node_modules/mocha/bin/_mocha"
+    "test": "istanbul cover ./node_modules/mocha/bin/_mocha",
+    "coveralls": "npm run test -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "should": "^13.2.3"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "supertest": "^3.3.0"
