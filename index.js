@@ -1,9 +1,5 @@
-const express = require('express');
-const app = express();
-app.get('/', (req, res) => {
- res.send('hello world')
-})
+const app = require('./src/app');
 
-app.listen(3001, () => {
-  console.log('监听3000端口')
+app.listen(3002, () => {
+  console.log('监听3002端口')
 })
