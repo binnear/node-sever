@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const fs = require('fs');
+const express = require('express');
+const router = express.Router();
 
 /* 获得首页 */
-router.get('/', function (req, res) {
-  let indexFilePath = 'D:/code/git/node-sever/dist/index.html'
+router.use('/', function (req, res) {
+  let indexFilePath = 'D:/code/git/node-sever/public/index.html'
   fs.readFile(indexFilePath, (err, data) => {
     if (err) {
       res.writeHeader(404, {
