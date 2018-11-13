@@ -1,7 +1,7 @@
 const http = require('http');
 const app = require('./service/app');
 const debug = require('debug')('nodejsexpress:server');
-
+const mysql = require('mysql');
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -10,7 +10,18 @@ const server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);  //指定发生错误时的事件
 server.on('listening', onListening);  //当监听成功时的回调
+const connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : 'EdAz1234',
+  database : 'binnear-test'
+});
+connection.connect();
 
+connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
+  if (error) throw error;
+  console.log('The solution is: ', results[0].solution);
+});
 
 function normalizePort(val) {
   const port = parseInt(val, 10);
